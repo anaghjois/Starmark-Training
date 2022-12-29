@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./calculator.js"></script>
+    <script>
+        function convert(){
+            const cel=prompt("Enter the temperature")
+            conTemp(cel);
+        }
+    </script>
+    <script>
+        function curCurrency(){
+            let first=document.getElementById("From").value;
+            let second=document.getElementById("To").value;
+            let curr=document.getElementById("cur1").value;
+           let rr= conCurrency(first,second,curr);
+           document.getElementById("cur2").value=rr
+        }
+    </script>
+    
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+    <h1>CALCULATOR</h1>
+    <input id="txtFirst" placeholder="Enter the number">
+    <select name="Ope" id="Operator">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="txtSecond" placeholder="Enter the number">
+    <button onclick="onClick()">=</button>
+    <span id="res">Result</span>
+</div>
+<div>
+    <h1>TEMPERATURE CONVERSION</h1>
+    <hr>
+    <button onclick="convert()">Convert</button>
+</div>
+<div>
+    <h1>FAVOURITE BOOKS</h1>
+    <input type="text" id="favBook" placeholder="enter book">
+    <button onclick="fvBook()">ADD</button>
+    <ul id="lstItems"></ul>
+</div>
+<div>
+    <h1>CURRENCY CONVERTOR</h1>
+    <input type="number" name="cur" id="cur1" onchange="curCurrency()" >
+    <select  id="From">
+        <option >Select Country</option>
+        <option>INR</option>
+        <option>AUD</option>
+        <option>EURO</option>
+        <option>USD</option>
+    </select>
+    <label for="">To</label>
+    <input type="number" name="cur" id="cur2" >
+    <select  id="To" onchange="curCurrency()">
+        <option >Select Country</option>
+        <option>INR</option>
+        <option>AUD</option>
+        <option>EURO</option>
+        <option>USD</option>
+    </select>
+</div>
+
+</body>
+</html>

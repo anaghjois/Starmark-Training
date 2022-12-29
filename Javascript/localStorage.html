@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./localStorage.js"></script>
+    <script >function onSave(){
+        saveToLocal(document.getElementById("txtNum").value,
+        document.getElementById('txtVal').value) 
+        }
+        function retriveData(){
+            viewData();
+        }
+        </script>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <div>
+        <p>
+            <input id="txtNum"type="number">
+            <input id="txtVal"type="text">
+            <button onclick="onSave()">Save</button>
+        </p>
+    </div>
+    <div>
+        <button onclick="retriveData()">View Data</button>
+        <p id="pDisplay"></p>
+    </div>
+</body>
+</html>

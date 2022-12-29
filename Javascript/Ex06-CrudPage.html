@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./CrudOperations.js"></script>
+    <title>CRUD OPERATIONS</title>
+</head>
+<body>
+    <div>
+        <input id="txtBook" placeholder="Enter Your fav Book">
+        <button onclick="onAdditem()">+</button>
+        <button >X</button>
+        <button onclick="">Edit</button>
+        <p id="pDisplay"/>
+    </div>
+    <script>
+        function onEdititem(id){
+            const item=prompt("Enter ne Book Name")
+            updateItems(id,item)
+            populate();
+        }
+        function onDeleteitem(id){
+                deleteItems(id)
+                populate();
+        }
+        function onAdditem(){
+            const bName=document.getElementById("txtBook").value;
+            addItem(bName);
+            alert("Book Added Successfully")
+            populate();
+        }
+        function populate(){
+            let p=document.getElementById("pDisplay");
+            p.innerHTML="<ol>";
+                let data=getAll();
+                for (let i = 0; i < data.length; i++) {
+                    const line = `<li type='1'>${data[i]} 
+                                    <a href="#" onclick="onDeleteitem(${i})">Delete</a>
+                                    <a href="#" onclick="onEdititem(${i})">Update</a>
+                                    </li>`;
+                    p.innerHTML+=line;
+                    
+                }
+        }
+   </script>
+</body>
+</html>

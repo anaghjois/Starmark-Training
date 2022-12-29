@@ -1,0 +1,30 @@
+*{
+    padding: 1px;
+    margin: 0;
+}
+body{
+    background-color: rgb(76, 218, 228);
+    color: black;
+}
+h1{
+    padding: 50px;
+    background-color: lightblue;
+    font-size: 34pt;
+    text-align: center;
+    border: 2px blue;
+}
+ul{
+    list-style: none;
+}
+li,a{
+    display: inline-block;
+    background-color:  rgb(76, 218, 228);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15pt;
+}
+a:hover{
+   
+    color: rgb(199, 4, 4);
+}

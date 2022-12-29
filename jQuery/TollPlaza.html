@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Toll.js"></script>
+    <script src="./jquery-3.6.2.min.js"></script>
+    <link rel="stylesheet" href="./toll.css">
+    <script>
+        $().ready(function(){
+            $("#record").hide();
+            $("select:first").click(function(){
+                const type=$("#Type").val()
+                if(type == "Car"){
+                $("#in").html("Toll Amount:60")
+                }else if(type == "Bike"){
+                    $("#in").html("Toll Amount:40")
+                }else if(type == "Truck"){
+                    $("#in").html("Toll Amount:100")
+                }
+            })
+            $("button:first").click(function(){
+                const type=$("#Type").val()
+                addVehicle(type)
+                console.log(data)
+                $("#pDisp").html(alert("Vehicle Added"))
+
+            })
+            $("button:last").click(function(){
+                $("#record").show(2000);
+                $("table").find('tr:gt(0)').remove()
+                let key1 = null
+                const table=[]
+                for (const key of data.keys()) {
+                    key1 = key
+                    obj = {}
+                    obj.vehicalType = key
+                    obj.vehicalCount = data.get(key) 
+                    obj.TotalAmount = getdetails(key)
+                    table.push(obj)
+                }
+                //console.log(table)
+
+                // const value = table.find((e)=> e.vehicalType == key1)
+                for (const ky of table) {
+                  
+                    const tr =`<tr>
+                    <td>${ky.vehicalType}</td>
+                    <td>${ky.vehicalCount}</td>
+                    <td>${ky.TotalAmount}</td>
+                    </tr>`
+                
+                     $("table").append(tr)
+                }
+              
+            })
+
+
+            // function fillData(table){
+
+            // }
+
+        })
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center ;">Toll Plaza</h1>
+    <hr>
+    <div id="container">
+        <h3>Please Select The Vehocle Type</h3>
+        <p>
+        <select  id="Type">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Truck">Truck</option>
+        </select>
+        </p>
+        <div>
+            <button>Add Vehicle</button>
+
+            <button>Calculate</button>
+            <p id="in"></p>
+            <p id="pDisp"></p>
+        </div>
+        <div id="record">
+                <h2 style="text-align:center ;">Records</h2>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th>Type</th>
+                    <th>No. of Vehicles</th>
+                    <th>Amount</th>
+                </tr>
+            </table>
+             
+        </div>
+    </div>
+</body>
+</html>

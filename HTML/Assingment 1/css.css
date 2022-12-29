@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+}
+nav{
+    text-align: center;}
+  a{
+      display: inline-block;
+      background-color: white;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+    border: 2px solid black;
+  }
+  table{
+    background-color: lightblue;
+    border: 2px solid black;
+    text-align: center;
+}
+img{
+    width:30%;
+    height: 250px;
+}
+ba{
+    text-align: center;
+    border: 2px solid black;
+}

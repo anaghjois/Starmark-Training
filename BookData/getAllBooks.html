@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <title>Book Store</title>
+
+    <Script>
+        $().ready(function(){
+            url = '/'
+            $.get(url, function(data){
+                console.log(data)
+               // $("tbody").remove()
+
+                $.each(data, (index, values)=>{
+                    const row = `<tr>
+                        <td>${values.BookId}</td>
+                        <td>${values.BookName}</td>
+                        <td>${values.AuthorName}</td>
+                        <td>${values.Price}</td>
+                        <td><a href="/delete/${values.BookId}">Delete</a></td>
+                        </tr>`
+                    $("tbody").append(row)
+                })
+            })
+        })
+    </Script>
+</head>
+<body>
+    <header>
+        <h1>Book Store</h1>
+    </header>
+
+    <nav><ol>
+        <a href="/getAllBooks">
+            <li>Home</li>
+        </a>
+        <a href="/addbooks">
+            <li>Add Books</li>
+        </a>
+        <a href="/findBook">
+            <li>Find Book</li>
+        </a>
+    </ol></nav>
+
+    <h2>All books</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>BookId</th>
+                <th>BookName</th>
+                <th>AuthorName</th>
+                <th>Price</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>    

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./jquery-3.6.2.min.js"></script>
+    <style>
+        div{
+            background-color: aquamarine;
+            border: 2px solid darkcyan;
+            width: 250px;
+            height: 200px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+         const func = function(){
+            $("div").click(function(){
+                $(this).css("background-color","blue")
+            })
+            $("div").mouseover(function(){
+                $(this).css("font-size","40pt")
+            }).mouseleave(function(){
+                $(this).css("font-size","18pt")
+            })
+             console.log("First Example of jQuery")
+             $("div").hide(1500)
+             $("a").click(function(){
+                $("div").show(1500)
+             })
+        }
+    $().ready(func);
+    </script>
+</head>
+<body>
+    <script>
+        // // jQuery(document).ready(function(){
+        // //     alert("I am ready!!!!")
+        // // });
+        // const func = function(){
+        //     alert("First Example of jQuery")
+        // }
+        // $().ready(func);
+    </script>
+    <nav>
+        <a href="#">Display</a>
+    </nav>
+    <div>
+        <p>Div 2</p>
+    </div>
+    <div>
+        <p>Div 3</p>
+    </div>
+    <div>
+        <p>Div 1</p>
+    </div>
+</body>
+</html>

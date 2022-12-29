@@ -1,0 +1,18 @@
+*{
+    background-color: antiquewhite;
+}
+h1,h2{
+    background-color: aquamarine;
+}
+
+#Type{
+    background-color: azure;
+    font-size: 20px;
+}
+
+#Type:hover{
+    background-color: tomato;
+}
+#btn1,#btn2{
+    padding: 2px;
+}

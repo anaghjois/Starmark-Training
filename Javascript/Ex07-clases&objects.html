@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./classes&objects.js"></script>
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementById('id').value=obj.id
+            document.getElementById('name').value=obj.name
+            document.getElementById('address').value=obj.address
+            document.getElementById('salary').value=obj.salary
+
+            document.getElementById('Id').value=emp.id
+            document.getElementById('Name').value=emp.name
+            document.getElementById('Address').value=emp.address
+            document.getElementById('Salary').value=emp.salary
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Singleton Object</h1>
+        <p><input type="number" id="id"placeholder="ID">
+            <input type="text" id="name" placeholder="NAME">
+            <input type="text" id="address"placeholder="ADDRESS">
+            <input type="text" id="salary"placeholder="SALARY">
+        </p>
+        <p>
+            <button>Save Changes</button>
+            <button>Clear</button>
+        </p>
+    </div>
+    <div>
+        <h1>Instance Object</h1>
+        <p><input type="number" id="Id"placeholder="ID">
+            <input type="text" id="Name" placeholder="NAME">
+            <input type="text" id="Address"placeholder="ADDRESS">
+            <input type="text" id="Salary"placeholder="SALARY">
+        </p>
+        <p>
+            <button>Save Changes</button>
+            <button>Clear</button>
+        </p>
+    </div>
+</body>
+</html>

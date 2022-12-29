@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./Ex08-RepoPattern.js"></script>
+    <script>
+    function createRow(emp){
+        let row=document.createElement("tr")
+        row.innerHTML=`<td>${emp.id}</td>
+        <td>${emp.name}</td>
+        <td>${emp.address}</td>
+        <td>${emp.salary}</td>`;
+        return row;
+    }
+    function display(){
+        const table=document.querySelector("#tblRecords");
+        const tablehead=document.querySelector("#thHeading");
+        table.innerHTML=''
+        table.appendChild(tablehead)
+        for (const emp of data) {
+            table.appendChild(createRow(emp))
+            }
+    }
+    window.addEventListener("load",function(){
+           display()
+    })
+    function onAdd(){
+           const id= parseInt(document.getElementById("txtId").value)
+           const name= document.getElementById("txtName").value
+           const address= document.getElementById("txtAddress").value
+           const salary=  document.getElementById("txtSalary").value
+
+            const employee=new Employee(id,name,address,salary)
+                a.addEmployee(employee)
+                display()
+                alert("Employee added successfully")
+        
+    }
+    function onEdit(){
+        const id=prompt("Enter the Id of the employee to edit")
+        try{
+            const foundData=a.getEmployee(id)
+            document.getElementById("txtId").value=foundData.id
+            document.getElementById("txtName").value=foundData.name
+            document.getElementById("txtAddress").value=foundData.address
+            document.getElementById("txtSalary").value=foundData.salary
+        }
+        catch(ex){
+            alert(ex)
+        }
+    }
+    function onSaveChanges(){
+     const id=parseInt(document.getElementById("txtId").value)
+     const name=document.getElementById("txtName").value
+     const address=document.getElementById("txtAddress").value
+     const salary=parseInt(document.getElementById("txtSalary").value)
+     const newEmp=new Employee(id,name,address,salary)
+     try{
+        a.updateData(newEmp);
+        display();
+        }
+        catch(error){
+            alert(error)
+        }
+     }
+    
+    </script>
+    <title>Employee Repository</title>
+</head>
+<body>
+    <h1>Employee Monitoring System</h1>
+    <hr>
+    <nav>
+        <a href="#" onclick="onEdit()">Edit Data</a>
+        <a href="#" onclick="onAdd()">Add Data</a>
+        <a href="#" onclick="onDelete()">Delete Data</a>
+    </nav>
+    <hr>
+    <div><h2>List of Employees</h2>
+        <hr>
+        <table id="tblRecords" border="1">
+            <tr id="thHeading"><th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Emp Address</th>
+            <th>Emp Salary</th></tr>
+        </table>
+    </div>
+    <div>
+        <h2>Details of the Employee</h2>
+      <p>Employee ID :<input id="txtId" type="number"></p>
+      <p>Employee Name :<input id="txtName" type="text"></p>
+      <p>Employee Address :<input id="txtAddress"type="text"></p>
+      <p>Employee Salary :<input id="txtSalary" type="text"></p>
+      <p><input type="button" value="save changes" onclick="onSaveChanges()"></p>
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.2.min.js"></script>
+    <script>
+        $().ready(function(){
+            $("div:first").slideUp(000)
+            $("a:first").click(function(){
+                $("div:first").slideDown(2000)
+            })
+            $("button").click(function(event){
+                $("div:last").fadeToggle(2000)
+                event.preventDefault();
+                const obj={}
+                obj.name=$("#txtName").val()
+                obj.email=$("#txtEmail").val()
+                obj.salary=$("#txtSal").val()
+                $("div:eq(1)").text(JSON.stringify(obj))
+                $("div: eq(1)").fadeToggle(2000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="#">User Registration</a>
+    <div>
+        <h1>USER REGISTRATION</h1>
+        <hr>
+        
+        <form>
+                <p>
+                    Name: <input required type="text" id="txtName">
+                </p>
+                <p>
+                    Email: <input type="email" id="txtEmail">
+                </p>
+                <p>
+                    Salary: <input required type="number" id="txtSal" min="10000" max="100000">
+                </p>
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+        </form>
+    </div>
+    <div id="divDisplay">
+
+    </div>
+
+</body>
+</html>

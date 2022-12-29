@@ -1,0 +1,28 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: rgb(17, 160, 141);
+}
+header{
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(6, 88, 77);
+    border: solid black 2px;
+    
+}
+nav{
+    padding: 25px;
+    background-color: rgb(10, 104, 91);
+    border: solid black 2px;
+    text-align: center;
+    
+}
+hr{
+    color: solid black;
+}
+nav>button{
+    width: 25%;
+    border-radius: 25px;
+}

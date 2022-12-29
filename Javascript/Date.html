@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function onSetInterval(){
+            setInterval(()=>{
+                const currDt = new Date();
+            const hr = currDt.getHours();
+            const min = currDt.getMinutes();
+            const sec = currDt.getSeconds();
+            const Content = `<b>${hr}:${min}:${sec}</b>`;
+            document.getElementById("lblTime").innerHTML = Content;
+            },1000)
+            
+        }
+        function onSetTimeout(){setTimeout(()=>{
+            alert("Time for Lunch")},2000)}
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Time</h1>
+    <hr>
+    <p>
+        <label id="lblTime"></label>
+    </p>
+    <button onclick="onSetInterval()">Set Interval</button>
+    <button onclick="onSetTimeout()">Time Out</button>
+</body>
+</html>

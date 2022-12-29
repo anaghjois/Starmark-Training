@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toll Plaza</title>
+    <link rel="stylesheet" href="./Tollupdated.css">
+        <script src="./jquery-3.6.2.min.js"></script>
+<script src="TollUpdated.js"></script>
+<script>
+    function populateDropDownBox(){
+        const sl = document.getElementById("slType");
+        for(let i =0; i < localStorage.length; i++){
+            //debugger;
+            let option = document.createElement("option");
+            option.textContent = localStorage.key(i);
+            sl.appendChild(option);
+        }
+    }
+    function displayStatistics(){
+        const data=repo.getAllDetails()
+        $("table").find("tr:gt(0)").remove();
+        for (const obj of data.keys()) {
+            let values=data.get(obj)
+            let row=`<tr>
+                <td rowspan="${values.length+1}">${obj}</td>
+                <td rowspan="${values.length+1}">Rs.${values[0].amount*values.length}</td>`
+                $.each(values,(index,value)=>{
+                    let columnData=`<tr><td>${value.vehicleNo}</td><td>Rs.${value.amount}</td></tr>`
+                    row+=columnData
+                })
+                row+=`</td>`
+                $("table").append(row)
+        }
+    }
+    const repo = new VehicleRepo();
+    $().ready(function(){
+        $("div").hide();
+        localStorage.setItem("Car", 90);
+        localStorage.setItem("Bike", 30);
+        localStorage.setItem("Bus", 290);
+        localStorage.setItem("Truck", 490);
+        populateDropDownBox();
+        $("#slType").change(function(){
+            const type = $("#slType").val();
+            const amount = localStorage.getItem(type);
+            $("#txtAmount").val(amount)
+        })
+        //adding vehicle
+        $("div").find("button:eq(0)").click(function(){
+            const vNo = $("#txtNo").val();
+            const type = $("#slType").val();
+            const amount = parseInt($("#txtAmount").val());
+
+            const obj = new Vehicle(vNo.toUpperCase(), type, amount);
+            repo.addNewVehicle(obj);
+            alert("Vehicle details added successfully!!");
+            console.log(JSON.stringify(repo.data));
+        })
+        $("nav > button:first").click(function(){
+            $("div").hide();
+            $("div:first").show(2000);
+        })
+        $("nav > button:last").click(function(){
+            $("div").hide();
+            $("div:last").show(2000);
+            displayStatistics();
+        })
+
+    })
+</script>
+</head>
+<body>
+    <header>
+        <h1> TOLL PLAZA</h1>
+    </header>
+    <nav>
+    <button>Add Vehicle</button>
+    <button>Display</button>
+    </nav>
+<div>
+    <h1>Add New Vehicle</h1>
+    <hr>
+    <p>
+        <input style="text-transform: uppercase;"type="text" id="txtNo">
+        <select id="slType">
+            <option>Select Vehicle</option>
+        </select>
+        <input type="text" id="txtAmount" disabled>
+        <button>Add Vehicle</button>
+    </p>
+</div>
+<div>
+    <h1>Vehicle Statistics</h1>
+    <hr>
+    <table border="1" width="100%">
+        <tr>
+            <th>Vehicle Type</th>
+            <th colspan="3">Vehicle Details</th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

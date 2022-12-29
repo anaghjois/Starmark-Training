@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <title>Book Store</title>
+
+    <script>
+    $().ready(function(){
+        $("div").hide()
+
+        $("button").click(function(){
+            const id = $("input").val()
+            console.log(id)
+
+            $.get(id,function(data){
+                $("div").show()
+                //$("table").children("tr:gt(0)").remove()
+                $.each(data, (index, values)=>{
+                    const row = `<tr>
+                        <td>${values.BookId}</td>
+                        <td>${values.BookName}</td>
+                        <td>${values.AuthorName}</td>
+                        <td>${values.Price}</td>
+                        </tr>`
+                    $("table").append(row)
+                })
+            })
+        })
+    })
+    
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book Store</h1>
+    </header>
+
+    <nav><ol>
+        <a href="/getAllBooks">
+            <li>Home</li>
+        </a>
+        <a href="/addbooks">
+            <li>Add Books</li>
+        </a>
+        <a href="/findBook">
+            <li>Find Book</li>
+        </a>
+    </ol></nav>
+
+    <label for="">Search book by ID</label>
+    <input type="number">
+    <button>Search</button>
+
+    <div>
+        <h2>Book</h2>
+    
+        <table border="1">
+                <tr>
+                    <th>BookId</th>
+                    <th>BookName</th>
+                    <th>AuthorName</th>
+                    <th>Price</th>
+                </tr>
+        </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dom.css">
+    <script src="./jquery-3.6.2.min.js"></script>
+    <script src="./repo.js"></script>
+    <script>
+        const expRepo=new ExpenseManager();
+        let FoundExpense=null;
+        function createData(){
+            expRepo.addNewExpense(new Expenses("Food at cafe",1555,new Date(2022,9,12)))
+            expRepo.addNewExpense(new Expenses("Brunch at cafe",120,new Date(2022,10,23)))
+            expRepo.addNewExpense(new Expenses("coffee at cafe",1555,new Date(2022,11,11)))
+            expRepo.addNewExpense(new Expenses("tea at cafe",1555,new Date(2022,11,12)))
+        }
+        function dateString(date){
+            return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+        }
+        function onDisplayById(id){
+            $(".container").children("div").hide();
+            $(".container").children("div:eq(1)").show(2000);
+            FoundExpense=expRepo.getExpenseById(id)
+            $("#txtId").val(FoundExpense.id)
+            $("#txtDetails").val(FoundExpense.details)
+            $("#txtAmt").val(FoundExpense.amount)
+            $("#txtDate").val(dateString(FoundExpense.date))
+        }
+        function clear(div){
+            $("div").children("div:eq(1)").find("input").val("")
+            $("div").children("div:eq(2)").find("input").val("")
+            $(".container").children("div").hide(2000);
+
+        }
+        function populate(data){
+            $("table").find('tr:gt(0)').remove()
+            $.each(data,(index,item)=>{
+                const row=`<tr>
+                    <td>${item.id}</td>
+                    <td>${item.details}</td>
+                    <td>${item.amount}</td>
+                    <td>${dateString(item.date)}</td>
+                    <td><a class="edit" hregf="#" onclick="onDisplayById(${item.id})"
+                        />Edit</td></tr>`;
+                   $("table").append(row)
+            })
+        }
+        function onSavechanges(){
+            FoundExpense.details=$("#txtDetails").val()
+            FoundExpense. amount=$("#txtAmt").val()
+            FoundExpense. date=new Date($("#txtDate").val())
+            const id=FoundExpense.id
+            expRepo.modifyExpense(id,FoundExpense)
+            alert("Expense Moified")
+            // clear($(".container").children("div:eq(1)"))
+            //  $(".container").find("div:eq(1)").hide(2000)
+        }
+        function onDisplayTable(){
+            $(".container").children("div").hide();
+            $(".container").children("div:first").show(2000);
+            const data = expRepo.getAllExpnses();
+                     populate(data);
+        }
+        function onDisplayNewExpense(){
+            $(".container").children("div").hide();
+            $(".container").children("div:last").show(2000);
+        }
+        function onFindExpensebyDetail(){
+            alert("Find by detail")
+        }
+        function onFindExpensebyDate(){
+            const date=prompt("enter Date dd-mm-yyyy");
+            //console.log(new Date(date));
+            const d=expRepo.findExpenseByDate(new Date(date));
+            //console.log(d)
+            d.length>0?populate(d):alert("data not found")
+
+            $(".container").children("div:first").show(2000);
+        }
+        function addExpense(){
+            const details=$("#txtNewDetails").val()
+            const amount=$("#txtNewAmt").val()
+            const date=new Date($("#txtNewDate").val())
+            const newExpenses=new Expenses(details,amount,date)
+            expRepo.addNewExpense(newExpenses)
+            alert("New Expense added Successfully")
+            //clear()
+            //$(".container>div:eq(2)").hide(2000);
+        }
+        function init(){
+            createData();
+            $("div.container").children("div").hide()
+            $("a:first").click(onDisplayTable)
+            $("a:eq(1)").click(onDisplayNewExpense)
+            $("ul>li:eq(2)>a").click(onFindExpensebyDate)
+            $("ul>li:eq(3)>a").click(onFindExpensebyDetail)
+            $("#btnSave").click(onSavechanges)
+            $("#clear").click(clear)
+            $("#addData").click(addExpense)
+            $("#cleardata").click(clear)
+        }
+        $().ready(init)
+    </script>
+</head>
+<body>
+    <h1>EXPENSE MANAGER</h1>
+    <nav style="text-align: center;">
+    <ul>
+        <li><a href="#">View All Expenses</a></li>
+        <li><a href="#">Add New Expenses</a></li>
+        <li><a href="#">Find Expenses By Date</a></li>
+        <li><a href="#">Find Expense by Detail</a></li>
+    </ul></nav>
+    <hr>
+    <div class="container">
+        <div>
+            <h2>Table of Records</h2>
+        <hr>
+        <table border="1">
+            <tr>
+                <th>ExpenseID</th>
+                <th>Expense Detail</th>
+                <th>Expense Amount</th>
+                <th>Date of Expense</th>
+                <th>Options</th>
+            </tr>
+        </table>
+         </div>
+    <div>
+        <h2>Details of Expense</h2>
+        <hr>
+        <div>
+            <p>
+                Expense Id: <input disabled id="txtId" type="number">
+            </p>
+            <p>
+                Expense Detail :<input id="txtDetails" type="text">
+            </p>
+            <p>
+                Expense Amount :<input id="txtAmt" type="number">
+            </p>
+            <p>
+                Expense Date :<input id="txtDate" type="date">
+            </p>
+            <p>
+                <button id="onAdd">Save Change</button>
+                <button id="clear">Close</button>
+            </p>
+        </div>
+    </div>
+        <div>
+            <h2>Add New Expense</h2>
+            <hr>
+            <div>
+                <p>
+                    New Detail :<input id="txtNewDetails" type="text">
+                </p>
+                <p>
+                    New Amount :<input id="txtNewAmt" type="number">
+                </p>
+                <p>
+                    New Date :<input id="txtNewDate" type="date">
+                </p>
+                <p>
+                    <button id="addData">Add Expense</button>
+                    <button id="cleardata">Close</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
