@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="jquery-3.6.2.min.js"></script>
+    <script>
+function out(){
+        a=[]
+        const out=[]
+        const text="the quick brown fox jumps over the lazy dog"
+        const txtSplit=text.split(" ")
+        // console.log(txtSplit)
+    
+        let output1=$("#encode").val();
+        const casein = output1.toLowerCase()
+    // console.log(casein)
+        let result=""
+        for(let i=0;i<casein.length;i++){
+            out[i]=casein[i]
+}
+
+console.log(out)
+console.log(txtarray)
+            for(let i=0;i<out.length;i++){
+
+    //console.log(output)
+    for(let j=0;j<txtSplit.length;j++)
+    {
+        for (let k = 0; k < txtSplit.length; k++) {
+    
+        // console.log(txtarray[j].charAt(k))
+        if(txtSplit[k].charAt(j)==out[i]){
+            result=""+k+j
+            a.push(result)
+            
+            console.log(result)
+         }
+        
+    }
+    document.getElementById("pDisplay").innerHTML = a
+}
+}
+    }
