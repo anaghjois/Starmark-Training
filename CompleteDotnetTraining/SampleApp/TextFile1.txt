@@ -1,0 +1,6 @@
+﻿<<<<<<<<<<<Patient Management System>>>>>>>>>>
+1.ADD PATIENT
+2.UPDATE PATIENT
+3.SHOW PATIENTS
+4.FIND PATIENTS
+<<<<<<<<<<<Press Any Key To Exit>>>>>>>>>>>>>>>

@@ -1,0 +1,14 @@
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.exe.config
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.exe
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.pdb
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.csprojAssemblyReference.cache
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.csproj.CoreCompileInputs.cache
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.exe
+D:\Anagha Jois Training\Dot Net Training\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.pdb
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.exe.config
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.exe
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\bin\Debug\SampleApp.pdb
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.csprojAssemblyReference.cache
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.csproj.CoreCompileInputs.cache
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.exe
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\SampleApp\obj\Debug\SampleApp.pdb
