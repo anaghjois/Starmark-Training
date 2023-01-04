@@ -9,7 +9,7 @@ namespace SampleApp
     class Patient
     {
         public int PatientId { get; set; }
-        public String PatientName { get; set; }
+        public string PatientName { get; set; }
         public long PatientMobileNumber { get; set; }
         public string PatientAddress { get; set; }
         public string Status { get; set; }
@@ -17,7 +17,8 @@ namespace SampleApp
 
     class PatientManager
     {
-        private Patient[] _patient = new Patient[100];
+        private Patient[] _patient = new Patient[3];
+        //int a[] = new int[];
 
         //Adding new patient
         public void AddPatient(Patient pat)
@@ -26,7 +27,9 @@ namespace SampleApp
             {
                 if (_patient[i] == null)
                 {
-                    _patient[i] = new Patient() { PatientId = pat.PatientId, PatientName = pat.PatientName, PatientAddress = pat.PatientAddress, PatientMobileNumber = pat.PatientMobileNumber, Status = pat.Status };
+                    _patient[i] = new Patient();
+                    _patient[i].PatientId = pat.PatientId;
+                        // { PatientId = pat.PatientId, PatientName = pat.PatientName, PatientAddress = pat.PatientAddress, PatientMobileNumber = pat.PatientMobileNumber, Status = pat.Status };
                     Console.WriteLine("Patient Added");
                     return;
                 }
