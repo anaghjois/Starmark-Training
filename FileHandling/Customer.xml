@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<Customers>
+  <Table1>
+    <Customer_x0020_Id>1</Customer_x0020_Id>
+    <CustomerName>Prajit</CustomerName>
+    <CustomerAddress>Sagara</CustomerAddress>
+    <BillAmount>1234</BillAmount>
+  </Table1>
+</Customers>
