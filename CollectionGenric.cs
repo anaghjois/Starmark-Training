@@ -12,8 +12,28 @@ namespace SampleFrameworksApp
         static void Main(string[] args)
         {
             //ListGenExample();
-            dictionaryExample();
+            //dictionaryExample();
+            //SortedDictionaryExample();
+           // CustomCollectionExample();
+
         }
+
+     
+
+        private static void SortedDictionaryExample()
+        {
+            SortedDictionary<string, long> PhoneBook = new SortedDictionary<string, long>();
+            PhoneBook.Add("Zaman", 9944338767);
+            PhoneBook.Add("Idris", 99443367857);
+            PhoneBook.Add("Anagha", 7744338767);
+            PhoneBook.Add("Vinayak", 99233301067);
+            PhoneBook.Add("Bhanuraj", 9944338767);
+            foreach (var item in PhoneBook)
+            {
+                Console.WriteLine(item.Key +" : " +item.Value);
+            }
+        }
+
         static Dictionary<string, string> users = new Dictionary<string, string>();
 
         private static void dictionaryExample()

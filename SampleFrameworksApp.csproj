@@ -33,11 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>SampleFrameworksApp.SortingExe</StartupObject>
+    <StartupObject>SampleFrameworksApp.FileHandling.xmlAssignment</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,8 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillGeneration.cs" />
     <Compile Include="CollectionGenric.cs" />
     <Compile Include="CollectionsEx.cs" />
+    <Compile Include="CustomCollections.cs" />
+    <Compile Include="FileHandling\CSVReadingWriting.cs" />
+    <Compile Include="FileHandling\FileIOEX01.cs" />
+    <Compile Include="FileHandling\SerializationDemo.cs" />
+    <Compile Include="FileHandling\xmlAssignment.cs" />
+    <Compile Include="FileHandling\XMLExample.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="Practical\Customer.cs" />
     <Compile Include="Practical\CustomerFactory.cs" />
     <Compile Include="Practical\Entity.cs" />
