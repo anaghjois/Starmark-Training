@@ -1,0 +1,12 @@
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\ProductManager.dll.config
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\ProductManager.dll
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\ProductManager.pdb
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\EntityFramework.dll
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\EntityFramework.SqlServer.dll
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\EntityFramework.xml
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\bin\Debug\EntityFramework.SqlServer.xml
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\obj\Debug\ProductManager.csprojAssemblyReference.cache
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\obj\Debug\ProductManager.csproj.CoreCompileInputs.cache
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\obj\Debug\ProductManager.csproj.CopyComplete
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\obj\Debug\ProductManager.dll
+D:\AnaghaJoisTraining\DotNetTraining\CompleteDotnetTraining\ProductManager\ProductManager\obj\Debug\ProductManager.pdb
